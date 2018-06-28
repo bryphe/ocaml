@@ -8,6 +8,7 @@ install:
 build_script:
     - esy-bash ./esy-configure --prefix C:/ocaml-bits
     - esy-bash make world.opt
+    - esy-bash make flexlink.opt
     - esy-bash make install
     - echo print_endline "Hello from OCaml";; > C:/ocaml-bits/test.ml
     - esy-bash /cygdrive/c/ocaml-bits/bin/ocamlopt.exe -o C:/ocaml-bits/test-output C:/ocaml-bits/test.ml
