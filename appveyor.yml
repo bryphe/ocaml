@@ -7,7 +7,7 @@ install:
 
 build_script:
     - esy-bash ./esy-configure --prefix C:/ocaml-bits
-    - esy-bash make world
+    - esy-bash make world.opt
     - esy-bash make install
 
 test: off
