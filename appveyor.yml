@@ -9,5 +9,8 @@ build_script:
     - esy-bash ./esy-configure --prefix C:/ocaml-bits
     - esy-bash make world.opt
     - esy-bash make install
+    - echo print_endline "Hello from OCaml";; > C:/test.ml
+    - esy-bash /cygdrive/c/ocaml-bits/bin/ocamlopt.exe /cygdrive/c/test.ml -o test.native
+    - C:/test.native.exe
 
 test: off
