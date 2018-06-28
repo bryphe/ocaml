@@ -3,7 +3,7 @@ platform:
     - x86
 
 install:
-    - npm install esy-bash
+    - npm install -g esy-bash
 
 build_script:
     - esy-bash ./esy-configure --prefix C:/ocaml-bits
