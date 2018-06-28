@@ -19,8 +19,8 @@ done
 echo "[configure-windows] Prefix path: $prefix"
 
 echo "[configure-windows] Copying architecture headers."
-cp config/m-nt.h config/m.h
-cp config/s-nt.h config/s.h
+cp config/m-nt.h byterun/caml/m.h
+cp config/s-nt.h byterun/caml/s.h
 
 # TODO: Differentiate based on architecture - use 'Makefile.mingw' for 32-bit environments
 echo "[configure-windows] Bringing over mingw64 Makefile."
