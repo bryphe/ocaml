@@ -2,8 +2,8 @@
 
 # esy-configure
 #
-# Wrapper to delegate to the appropriate `configure` strategy,
-# based on the active platform.
+# Wrapper to delegate to configuration to the 
+# appropriate `configure` strategy based on the active platform.
 #
 # Today, OCaml has separate build strategies:
 # - Linux, OSX, Cygwin (gcc) - https://github.com/ocaml/ocaml/blob/trunk/INSTALL.adoc
