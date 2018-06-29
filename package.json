@@ -8,13 +8,7 @@
   "esy": {
     "build": [
       "./esy-configure -no-cfi -prefix $cur__install",
-      [
-        "sh",
-        "-c",
-        "[[ `uname -s` == CYGWIN* ]] && make -j1 world.opt || make -j world.opt"
-      ],
-      "make install",
-      "make clean"
+      "./esy-build"
     ],
     "buildsInSource": true,
     "exportedEnv": {
