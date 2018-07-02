@@ -4,9 +4,14 @@
 #
 # Wrapper to execute appropriate build strategy, based on platform
 
+set -u
+set -e
+set -o pipefail
+
 case "$(uname -s)" in
     CYGWIN*|MINGW32*|MSYS*)
         echo "[esy-build] Detected windows environment..."
+        make flexdll
         make -j1 world.opt
         make flexlink.opt
         ;;
