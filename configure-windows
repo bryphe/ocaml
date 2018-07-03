@@ -31,3 +31,4 @@ sed -i "s#PREFIX=C:/ocamlmgw64#PREFIX=$prefix#g" config/Makefile
 
 echo "[configure-windows] Setting up flexdll"
 git clone https://github.com/alainfrisch/flexdll.git
+make flexdll
