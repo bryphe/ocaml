@@ -1,5 +1,5 @@
 {
-  "name": "@bryphe/ocaml",
+  "name": "bryphe-ocaml",
   "version": "4.6.4",
   "description": "OCaml Compiler as an esy npm Package",
   "versionNotes": [
