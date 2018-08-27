@@ -152,6 +152,10 @@ OCaml 4.06.0 (3 Nov 2017):
   in module Format. Rewrite/extend documentation of tabulation boxes.
   (Pierre Weis)
 
+- GPR#2004: Use common standard library path `lib/ocaml` for Windows,
+  for consistency with OSX & Linux. Previously was located at `lib`.
+  (Bryan Phelps, review by David Allsopp)
+
 ### Other libraries:
 
 - MPR#7564, GPR#1211: Allow forward slashes in the target of symbolic links
