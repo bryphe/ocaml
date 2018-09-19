@@ -3,7 +3,8 @@ platform:
     - x86
 
 install:
-    - npm install -g esy-bash
+    - npm install -g esy@0.2.11
+    - appveyor-retry esy install
 
 build_script:
     - esy-bash ./esy-configure --prefix C:/ocaml-bits
