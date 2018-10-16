@@ -5,8 +5,6 @@
 # Creates a native Windows MingW build, based on:
 # https://github.com/ocaml/ocaml/blob/trunk/README.win32.adoc
 
-cd ..
-
 export prefix=C:/ocamlmgw64
 while : ; do
     case "$1" in
