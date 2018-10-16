@@ -5,11 +5,9 @@
   "esy": {
     "build": [
       ["mkdir", "compilerlibs"],
-      ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows -prefix $cur__install' : 'true'}"],
+      ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows.sh -prefix $cur__install' : 'true'}"],
       ["bash", "-c", "#{os != 'windows' ? './configure -no-cfi -prefix $cur__install' : 'true'}"],
-      "make -j1 world.opt",
-      "make install",
-      "make clean"
+      ["bash", "-c", "#{os == 'windows' ? './esy/build-windows.sh' : './esy/build.sh'}"]
     ],
     "buildsInSource": true,
     "exportedEnv": {
@@ -26,6 +24,9 @@
         "scope": "global"
       }
     }
+  },
+  "dependencies": {
+    "flexdll": "link:../_flexdll_release"
   },
   "repository": {
     "type": "git",
