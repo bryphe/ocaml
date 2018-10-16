@@ -1,16 +1,19 @@
+image: Visual Studio 2017
+
 platform:
     - x64
-    - x86
+
+cache:
+    - C:\Users\appveyor\.esy
 
 install:
-    - npm install -g esy-bash
+    # The x64 is required as a workaround for esy/esy#412
+    - ps: Install-Product node 8 x64
+    - npm install -g esy@0.3.0
+    # Retry is necessary due to esy/esy#413 and esy/esy#414
+    - appveyor-retry esy install
 
 build_script:
-    - esy-bash ./esy-configure --prefix C:/ocaml-bits
-    - esy-bash ./esy-build
-    - esy-bash cp /cygdrive/c/ocaml-bits/bin/flexlink.exe /usr/local/bin/flexlink.exe
-    - echo print_endline "Hello from OCaml";; > C:/ocaml-bits/test.ml
-    - esy-bash /cygdrive/c/ocaml-bits/bin/ocamlopt.exe -o C:/ocaml-bits/test-output C:/ocaml-bits/test.ml
-    - C:/ocaml-bits/test-output.exe
+    - esy build
 
 test: off
