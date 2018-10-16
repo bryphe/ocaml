@@ -4,8 +4,9 @@
   "description": "OCaml Compiler as an npm Package",
   "esy": {
     "build": [
-      "mkdir compilerlibs",
-      "./configure -no-cfi -prefix $cur__install",
+      ["mkdir", "compilerlibs"],
+      ["bash", "-c", "#{os == 'windows' ? './esy/configure-windows -prefix $cur__install' : 'true'}"],
+      ["bash", "-c", "#{os != 'windows' ? './configure -no-cfi -prefix $cur__install'}"],
       "make -j1 world.opt",
       "make install",
       "make clean"
