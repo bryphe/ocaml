@@ -1,5 +1,7 @@
 #! /bin/sh
 
+set -e
+
 # build-windows.sh
 # Execute build steps for Windows as described here:
 # https://github.com/ocaml/ocaml/blob/4.02/README.win32

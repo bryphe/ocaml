@@ -1,5 +1,7 @@
 #! /bin/sh
 
+set -e
+
 # configure-windows
 #
 # Creates a native Windows MingW build, based on:
