@@ -1125,11 +1125,13 @@ CAMLexport void caml_memprof_delete_th_ctx(struct caml_memprof_th_ctx* ctx)
 
 CAMLexport void caml_memprof_leave_thread(void)
 {
+  fprintf(stderr, "!-- caml_memprof_leave_thread\n");
   local = NULL;
 }
 
 CAMLexport void caml_memprof_enter_thread(struct caml_memprof_th_ctx* ctx)
 {
+  fprintf(stderr, "!-- caml_memprof_enter_thread - ctx: %p\n", ctx);
   CAMLassert(local == NULL);
   local = ctx;
   caml_memprof_set_suspended(ctx->suspended);
